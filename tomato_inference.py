@@ -3,20 +3,12 @@
 
 # # Inference for the tomato model
 
-# In[2]:
-
-
-get_ipython().run_line_magic('reload_ext', 'autoreload')
-get_ipython().run_line_magic('autoreload', '2')
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
 # In[3]:
 
 
-import numpy as np                  
-import os                    
-from fastai.vision import *  
+import numpy as np
+import os
+from fastai.vision import *
 
 
 # ### Step 1: Setup the paths
@@ -49,7 +41,7 @@ learn = load_learner(path_model, 'model.pkl')
 # The model can be viewed as follows. This is a resnet18 model, easy to find online
 # Here is one: https://pytorch.org/hub/pytorch_vision_resnet/
 # best to google resnet18, and look at the images
-learn.model
+# print(learn.model)
 
 
 # ### Step 3: Predict for a test image
@@ -58,7 +50,7 @@ learn.model
 
 
 # The test image(s) should be stored in the datasets folder
-path_data.ls()
+# path_data.ls()
 
 
 # In[28]:
@@ -78,5 +70,4 @@ prediction = learn.predict(img)[0]
 # In[30]:
 
 
-prediction
-
+print('The predicted output is: ',prediction)
